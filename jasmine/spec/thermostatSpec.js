@@ -30,7 +30,7 @@ describe('Thermostat', function() {
       expect(thermostat.temperature).toEqual(10)
     });
 
-    describe('power saving mode', function() {
+    describe('power saving mode effects', function() {
       it('has a maximum temperature of 25 when on', function() {
         for (var i = 0; i < 10; i++) {
           thermostat.up();
@@ -48,13 +48,17 @@ describe('Thermostat', function() {
     });
   });
 
-  describe('toggle power saving mode', function() {
-    it('sets the power saving mode to off', function() {
+  describe('power saving mode', function() {
+    it('is on by default', function() {
+      expect(thermostat.powerSavingMode).toEqual(true);
+    });
+
+    it('toggle sets the power saving mode to off', function() {
       thermostat.togglePowerSavingMode();
       expect(thermostat.powerSavingMode).toEqual(false);
     });
 
-    it('sets power saving mode to on', function() {
+    it('toggle sets power saving mode to on', function() {
       thermostat.powerSavingMode = false;
       thermostat.togglePowerSavingMode();
       expect(thermostat.powerSavingMode).toEqual(true);
