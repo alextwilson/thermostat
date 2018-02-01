@@ -22,5 +22,14 @@ describe('Thermostat', function() {
       thermostat.down()
       expect(thermostat.temperature).toEqual(19)
     });
+
+    it('has a minimum temperature of ten degrees', function(){
+      for (var i = 20; i > 5; i--) {
+        thermostat.down();
+      };
+      expect(thermostat.temperature).toEqual(10)
+    });
   });
+
+
 });
