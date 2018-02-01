@@ -10,7 +10,7 @@ function Thermostat() {
 };
 
 Thermostat.prototype.up = function() {
-  if (this.powerSavingMode && this.temperature === this.PSM_MAX) {
+  if (this.powerSavingMode && this.temperature >= this.PSM_MAX) {
     return;
   } else if (!this.powerSavingMode && this.temperature === this.MAX_TEMP) {
     return;
@@ -43,7 +43,7 @@ Thermostat.prototype.energyUsage = function() {
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return 'low-usage';
   }
-  if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature <= this.PSM_MAX) {
+  if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature < this.PSM_MAX) {
     return 'medium-usage';
   }
   return 'high-usage';

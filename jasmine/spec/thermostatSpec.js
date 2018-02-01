@@ -73,8 +73,6 @@ describe('Thermostat', function() {
     });
   });
 
-
-
   describe('displaying usage levels', function() {
     describe('when the temperature is below 18 degrees', function() {
       it('it is considered low-usage', function() {
