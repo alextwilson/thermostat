@@ -45,6 +45,6 @@ Thermostat.prototype.energyUsage = function() {
   }
   if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature <= this.PSM_MAX) {
     return 'medium-usage';
-  } 
+  }
   return 'high-usage';
-}
+};
