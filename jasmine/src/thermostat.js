@@ -6,6 +6,7 @@ function Thermostat() {
   this.powerSavingMode = true
   this.PSM_MAX = 25
   this.MAX_TEMP = 32
+  this.MEDIUM_ENERGY_USAGE_LIMIT = 18
 };
 
 Thermostat.prototype.up = function() {
@@ -37,3 +38,13 @@ Thermostat.prototype.togglePowerSavingMode = function() {
 Thermostat.prototype.reset = function() {
   this.temperature = 20;
 };
+
+Thermostat.prototype.energyUsage = function() {
+  if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
+    return 'low-usage';
+  }
+  if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature <= this.PSM_MAX) {
+    return 'medium-usage';
+  } 
+  return 'high-usage';
+}
