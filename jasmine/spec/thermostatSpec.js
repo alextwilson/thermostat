@@ -37,6 +37,14 @@ describe('Thermostat', function() {
         };
         expect(thermostat.temperature).toEqual(25)
       });
+
+      it('has a maximum temperature of 32 when off', function() {
+        thermostat.togglePowerSavingMode()
+        for (var i = 0; i < 15; i++) {
+          thermostat.up();
+        };
+        expect(thermostat.temperature).toEqual(32)
+      });
     });
   });
 

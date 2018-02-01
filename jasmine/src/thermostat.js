@@ -5,10 +5,13 @@ function Thermostat() {
   this.MINIMUM_TEMPERATURE = 10
   this.powerSavingMode = true
   this.PSM_MAX = 25
+  this.MAX_TEMP = 32
 };
 
 Thermostat.prototype.up = function() {
-  if (this.powerSavingMode && (this.temperature === this.PSM_MAX)) {
+  if (this.powerSavingMode && this.temperature === this.PSM_MAX) {
+    return;
+  } else if (!this.powerSavingMode && this.temperature === this.MAX_TEMP) {
     return;
   } else {
     this.temperature++;
