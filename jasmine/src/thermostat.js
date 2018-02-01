@@ -22,3 +22,11 @@ Thermostat.prototype.down = function() {
     this.temperature--;
   };
 };
+
+Thermostat.prototype.togglePowerSavingMode = function() {
+  if (this.powerSavingMode) {
+    this.powerSavingMode = false
+  } else {
+    this.powerSavingMode = true
+  }
+}

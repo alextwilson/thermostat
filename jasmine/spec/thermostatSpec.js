@@ -40,5 +40,10 @@ describe('Thermostat', function() {
     });
   });
 
-
+  describe('thermostat power saving mode', function() {
+    it('sets the power saving mode to off', function() {
+      thermostat.togglePowerSavingMode();
+      expect(thermostat.powerSavingMode).toEqual(false);
+    });
+  });
 });
