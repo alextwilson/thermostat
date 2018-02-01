@@ -30,6 +30,14 @@ describe('Thermostat', function() {
       expect(thermostat.temperature).toEqual(10)
     });
 
+    it('sets to 20 when reset is called', function() {
+      for (var i = 0; i > 12; i++) {
+        thermostat.up();
+      };
+      thermostat.reset()
+      expect(thermostat.temperature).toEqual(20)
+    });
+
     describe('power saving mode effects', function() {
       it('has a maximum temperature of 25 when on', function() {
         for (var i = 0; i < 10; i++) {
