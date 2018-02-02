@@ -1,5 +1,9 @@
+body {
+  background-color: #E6CCBE
+}
+
 .low-usage {
-  color: green;
+  color: #1B998B;
 }
 
 .medium-usage {
@@ -7,5 +11,5 @@
 }
 
 .high-usage {
-  color: red;
+  color: firebrick;
 }
