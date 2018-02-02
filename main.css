@@ -1,5 +1,15 @@
 body {
-  background-color: #E6CCBE
+  background-color: ivory;
+  width: 70%;
+  margin: 0px auto;
+}
+
+section {
+  background-color: #E6CCBE;
+
+  padding-right: 40px;
+  padding-bottom: 50px;
+  padding-left: 40px;
 }
 
 .low-usage {
